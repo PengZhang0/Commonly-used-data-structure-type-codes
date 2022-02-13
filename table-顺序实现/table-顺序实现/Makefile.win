@@ -1,0 +1,33 @@
+# Project: Project1
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o table.o $(RES)
+LINKOBJ  = main.o table.o $(RES)
+LIBS =  -L"D:/ccsu/！！！数据结构/DEV-CPP/lib" -L"D:/ccsu/！！！数据结构/DEV-CPP/libs" -lcstl -g3  
+INCS =  -I"D:/ccsu/！！！数据结构/DEV-CPP/include" 
+CXXINCS =  -I"D:/ccsu/！！！数据结构/DEV-CPP/lib/gcc/mingw32/3.4.2/include"  -I"D:/ccsu/！！！数据结构/DEV-CPP/include/c++/3.4.2/backward"  -I"D:/ccsu/！！！数据结构/DEV-CPP/include/c++/3.4.2/mingw32"  -I"D:/ccsu/！！！数据结构/DEV-CPP/include/c++/3.4.2"  -I"D:/ccsu/！！！数据结构/DEV-CPP/include" 
+BIN  = Project1.exe
+CXXFLAGS = $(CXXINCS)   -g3
+CFLAGS = $(INCS)   -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Project1.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "Project1.exe" $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+table.o: table.c
+	$(CC) -c table.c -o table.o $(CFLAGS)
